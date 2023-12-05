@@ -1,0 +1,57 @@
+<html><head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <title>Style Master</title>
+    <link rel="icon" href="assets/static/favicon.png">
+    <link rel="preload" as="style" href="assets/styles/main.css">
+    <link rel="stylesheet" href="assets/styles/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Round">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto" rel="stylesheet">
+    <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-R2R3SB31V8'); </script>
+</head>
+<body>
+    <main>
+        <section class="header">
+            <h1>Style Master</h1>
+        </section>
+        <section class="home">
+            <div class="main max-width-700">
+                <div>
+                    <p style="text-align: center; font-style: italic; font-size: 12px; color: #ffffffa4;">Style Master will only pull SKUs from apparel products</p>
+                </div>
+                <div class="values">
+                    <div class="row-headers" style="padding-top: 60px;width: 300px;">
+                        <p style="padding-bottom: 14px;">Department</p>
+                        <p style="padding-top: 7px;padding-bottom: 7px;">Price</p>
+                    </div>
+                    <div class="row-boxes" style="padding-top: 48px; max-width: 75px;">
+                        <input class="input-box" id="dept">
+                        <input class="input-box" id="price">
+                    </div>
+                </div>
+                <div style="padding-top: 60px">
+                    <div class="values">
+                        <button type="button" class="btn" id="submit" onclick="search()">FIND STYLE CODE</button>
+                        <div style="width: 12px;"></div>
+                        <button type="button" class="btn" id="clear" onclick="clear()">CLEAR</button>
+                    </div>
+                </div>
+                <div style="padding-top: 60px">
+                    <p id="result" style="font-size: 20px;"></p>
+                </div>
+                <div style="padding-top: 60px">
+                    <img id="barcode" style="max-width: 300px;opacity: 90%;" src="">
+                </div>
+            </div>
+        </section>
+
+        <section class="footer">
+            <p class="footer-center" style="margin: 28px; font-size:14px">Style Master does not encourage price guessing, and is not responsible for any unmatched sales. Use Style Master responsibly &amp; in line with BSP</p>
+        </section>
+    </main>
+
+<script async type="application/javascript" src="assets/scripts/main.js"></script>
+
+</body></html>
