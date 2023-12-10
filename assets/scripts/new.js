@@ -144,46 +144,26 @@ function randomise(r) {
   }
 }
 
-async function findNew(_dept, _price) {
-  var fb = `${deps[_dept]}/autoLoad?sort=price-asc&facets=priceValue:${_price}`
-  const response = await fetch(`https://www.tkmaxx.com/uk/en/${fb}`, {
-      method: "GET", // *GET, POST, PUT, DELETE, etc.
-      mode: "no-cors", // no-cors, *cors, same-origin
-      headers: {
-
-      }
-  });
-  console.log(response)
-  const r = response.json()
-  r = r.data.results
-  prevSearch = r
-  dept = _dept
-  price = _price
-  used = {}
-  if (r[0].document === undefined) {
-      result.innerHTML = "No results :("
-      return
-  }
-  randomise(r, dept, price)
-}
-
 async function find(_dept, _price) {
-  await fetch(`https://amplified-tin-pamphlet.glitch.me/search/getsku/${_dept}/${_price}`)
-  .then((response) => response.json())
-  .then(async function(r) {
-      prevSearch = r
-      dept = _dept
-      price = _price
-      used = {}
-      console.log(r)
-      if (r[0].document === undefined) {
-          result.innerHTML = "No results :("
-          return
-      }
-      randomise(r, dept, price)
-  })//.catch(function() {result.innerHTML = "No results :("})
+  var fb = `${deps[_dept]}/autoLoad?sort=price-asc&facets=priceValue:${_price}`
+  fetch(`https://www.tkmaxx.com/uk/en/${fb}`)
+      .then((response) => response.json())
+      .then(async function (r) {
+          r = r.data.results
+          prevSearch = r
+          dept = _dept
+          price = _price
+          used = {}
+          if (r[0].document === undefined) {
+              result.innerHTML = "No results :("
+              return
+          }
+          randomise(r, dept, price)
+      })
+      .catch(function () {
+          result.innerHTML = "No results :(";
+      })
 }
-
 
 function clear(b) {
   if (b !== true) {

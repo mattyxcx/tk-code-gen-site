@@ -19,11 +19,11 @@
         <section class="home">
             <div class="main max-width-700">
                 <div>
-                    <p style="text-align: center; font-style: italic; font-size: 12px; color: #ffffffa4;">Style Master will only pull SKUs from apparel products</p>
+                    <p style="text-align: center; font-style: italic; font-size: 12px; color: #ffffffa4;">Enter a department & price to retrieve a style code</p>
                 </div>
                 <div class="values">
-                    <div class="row-headers" style="padding-top: 60px;width: 300px;">
-                        <p style="padding-bottom: 14px;">Department</p>
+                    <div class="row-headers" style="padding-top: 60px;width: 200px;">
+                        <p style="padding-bottom: 16px;">Department</p>
                         <p style="padding-top: 7px;padding-bottom: 7px;">Price</p>
                     </div>
                     <div class="row-boxes" style="padding-top: 48px; max-width: 75px;">
@@ -33,16 +33,21 @@
                 </div>
                 <div style="padding-top: 60px">
                     <div class="values">
-                        <button type="button" class="btn" id="submit" onclick="search()">FIND STYLE CODE</button>
-                        <div style="width: 12px;"></div>
-                        <button type="button" class="btn" id="clear" onclick="clear()">CLEAR</button>
+                        <button type="button" class="btn" id="submit">FIND STYLE CODE</button>
+                        <div style="width: 6px;"></div>
+                        <button type="button" class="btn" style="width:120px" id="clear">CLEAR</button>
                     </div>
                 </div>
                 <div style="padding-top: 60px">
-                    <p id="result" style="font-size: 20px;"></p>
+                    <p id="result" style="font-size: 20px; padding-bottom: 14px;"></p>
+                    <p id="result-brand" class="brand-name"></p>
+                    <a id="result-link" target=”_blank” class="item-name"></a>
+                </div>
+                <div style="padding-top: 10px">
+                    <button type="button" class="btn small-btn invis" id="rand">Randomise</button>
                 </div>
                 <div style="padding-top: 60px">
-                    <img id="barcode" style="max-width: 300px;opacity: 90%;" src="">
+                    <img id="barcode" class="barcode invis" src="">
                 </div>
             </div>
         </section>
