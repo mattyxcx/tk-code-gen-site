@@ -1,16 +1,10 @@
 *{
     margin: 0;
     padding: 0;
-    font-family: 'Roboto', sans-serif;
-}
-
-.home{
-    min-height: 100vh;
-    height: auto;
-    background: rgb(15,15,15);
-    background-position: center;
-    background-size: cover;
-    position: auto;
+    font-family:'GTWalsheim';
+    font-weight: 200;
+    font-style: normal;
+    transition: 0.15s;
 }
 
 /* Button Config */
@@ -19,23 +13,111 @@ a{
     font-variant: normal;
 }
 
-/* Navigation Panel Config */
-
+/* Top Bar Config */
 .header{
     width: 100%;
     padding: 14px 0% 14px 0%;
     background: rgb(0,0,0);
     color: rgb(255,255,255);
     text-decoration: none;
-    position: auto;
+    position: sticky;
     text-align: center;
     font-size: 10px;
-    font-style: italic;
-    border-bottom: 1px solid rgba(50,50,50);
+    border-bottom: 1px solid #ffffff27;
+    box-shadow: 0 0px 10px 5px rgb(0, 0, 0);
+    z-index: 1;
 }
 
 .header h1{
     font-size: 24px;
+    font-weight: 400;
+}
+
+/* Main Content Config */
+.home{
+    min-height: 100vh;
+    height: auto;
+    background: rgb(15,15,15);
+    background-position: center;
+    background-size: cover;
+    position: sticky;
+}
+
+.results{
+    height: auto;
+    width: 305px;
+    background: rgba(0,0,0,0.3);
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    border: 1px solid #ffffff27;
+    box-shadow: 0 0px 10px 5px rgb(0, 0, 0);
+    position: sticky;
+    margin: auto;
+}
+
+.result-image-container{
+    width: 80px;
+    height: 80px;
+    background: #ffffff0c;
+    border: 1px solid #ffffff0e;
+    border-radius: 8px;
+    margin: 10px;
+}
+
+.result-image{
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    box-shadow: 0 0px 7px 5px rgba(172, 172, 172, 0.2);
+}
+
+.result-info{
+    margin-top: 10px;
+    padding-right: 30px;
+    width: 200px;
+    height: auto;
+    text-align: left;
+}
+
+.brand-name{
+    font-size:16px;
+    font-weight: 300;
+    padding-bottom: 4px;
+    padding-top: 4px;
+    color: rgba(255,255,255,0.8)
+}
+
+.item-name{
+    font-size:18px;
+    font-weight: 300;
+    padding-bottom: 10px;
+}
+
+.sku{
+    font-size:20px;
+    font-weight:200;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.success{
+    font-size:24px;
+    font-weight:300;
+    text-shadow: 0 0 12px #ffffff69;
+    padding-bottom: 8px;
+}
+
+.amount{
+    font-size:14px;
+    font-weight:200;
+    padding-bottom: 4px;
+    color: #ffffffd8;
+}
+
+.barcode{
+    max-width: 250px;
+    border: 10px solid white;
 }
 
 /* Footer Config */
@@ -61,7 +143,6 @@ a{
 .values{
     color: #fff;
     text-align: center;
-    padding-top: 14px;
     margin: auto;
     display: inline-flex;
 }
@@ -81,7 +162,7 @@ a{
 
 .row-boxes{
     margin: auto;
-    color: #ffffffc4;
+    color: #ffffffe1;
     text-align: left;
     padding-top: 12px;
     padding-right: 24px;
@@ -89,14 +170,17 @@ a{
 }
 
 .input-box{
-    background-color: #ffffffc4;
+    background-color: #ffffffab;
     width: 75px;
-    height: 32px;
+    height: 36px;
     padding: 4px;
     margin-top: 6px;
     text-align: right;
     font-size: 16px;
-    border: 0px;
+    border: 1px solid #ffffff0e;
+    border-radius: 8px;
+    font-family: 'Roboto', Helvetica, sans-serif;
+    transition: 0s;
 }
 
 .row p{
@@ -104,43 +188,86 @@ a{
 }
 
 .btn {
-    background-color: #ffffffc4;
     width: 180px;
     height: 36px;
-    padding: 4px;
-    margin-top: 6px;
-    text-align: center;
+    padding: 8px;
+    margin-top: 8px;
+    border: 1px solid #ffffff0e;
+    border-radius: 14px;
+    color: #ffffffb8;
+    background-color: rgb(30,30,30);
+    box-shadow: 0 0px 7px 5px rgba(0, 0, 0, 0.4);
+    transition: 0.15s;
+    font-weight: 300;
     font-size: 16px;
-    font-weight: 600;
-    border: 0px;
-    color: #000000;
+    cursor:pointer;
 }
 
-.small-btn{
-    width: 100px;
-    height: 24px;
-    font-size: 12px;
+.return{
+    padding: 10px;
+    padding-bottom: 12px;
+    padding-right: 12px;
+    border: 1px solid #ffffff0e;
+    border-radius: 14px;
+    color: #ffffffb8;
+    background-color: rgb(30,30,30);
+    box-shadow: 0 0px 7px 5px rgba(0, 0, 0, 0.2);
+    transition: 0.15s;
+    font-weight: 300;
+    font-size: 16px;
+    cursor:pointer;
+}
+
+.depts p{
+    font-weight: 400;
+    padding: 4px;
+    padding-bottom: 3px;
+    border-bottom: 1px dashed rgba(177, 74, 88, 0.3);
+    font-size: 14px;
+    color: rgb(177, 74, 87);
+    offset-rotate: 0turn;
+}
+
+.deptnames p{
+    font-weight: 300;
+    padding: 4px;
+    padding-bottom: 3px;
+    padding-left: 36px;
+    text-align: right;
+    border-bottom: 1px dashed rgba(177, 74, 88, 0.3);
+    font-size: 14px;
+    color: #ffffffd8;
+}
+
+.deptnames p:hover{
+    font-weight: 400;
+    border-bottom: 1px dashed rgba(177, 74, 88, 0.7);
+    font-size: 14px;
+    color: rgb(177, 74, 87);
 }
 
 .btn:hover{
+    border: 2px solid rgba(245, 46, 73);
     background-color: rgb(194, 44, 64);
-    color: #000000;
+    box-shadow: 0 5px 12px 5px rgba(80, 9, 9, 0.75);
+    color: #ffffff;
+    rotate: 0.01turn;
 }
 
-.brand-name{
-    font-size: 12px;
-    padding-bottom: 4px;
-    font-weight: 600;
+.return:hover{
+    background-color: rgb(194, 44, 64);
+    color: #ffffff;
+    box-shadow: 0 5px 12px 5px rgba(80, 9, 9, 0.75);
+    rotate: 0.01turn;
 }
 
-.item-name{
-    font-size: 14px;
-    padding-bottom: 4px;
+.input-box:focus{
+    background-color: #ffffff;
+    border: 2px solid rgb(74, 131, 177);
 }
 
-.barcode{
-    max-width: 250px;
-    border: 10px solid white;
+*:focus {
+    outline: none;
 }
 
 .invis{
@@ -164,4 +291,112 @@ a{
 ::selection {
     color: #fff;
     background: rgb(255, 99, 120);
+}
+
+@font-face {
+    font-family: 'GTWalsheim';
+    src: url('../static/gtwalsheim/gtwalsheimpro-black-webfont.woff2') format('woff2'),
+         url('../static/gtwalsheim/gtwalsheimpro-black-webfont.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'GTWalsheim';
+    src: url('../static/gtwalsheim/gtwalsheimpro-bold-webfont.woff2') format('woff2'),
+         url('../static/gtwalsheim/gtwalsheimpro-bold-webfont.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'GTWalsheim';
+    src: url('../static/gtwalsheim/gtwalsheimpro-light-webfont.woff2') format('woff2'),
+         url('../static/gtwalsheim/gtwalsheimpro-light-webfont.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'GTWalsheim';
+    src: url('../static/gtwalsheim/gtwalsheimpro-medium-webfont.woff2') format('woff2'),
+         url('../static/gtwalsheim/gtwalsheimpro-medium-webfont.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'GTWalsheim';
+    src: url('../static/gtwalsheim/gtwalsheimpro-regular-webfont.woff2') format('woff2'),
+         url('../static/gtwalsheim/gtwalsheimpro-regular-webfont.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'GTWalsheim';
+    src: url('../static/gtwalsheim/gtwalsheimpro-thin-webfont.woff2') format('woff2'),
+         url('../static/gtwalsheim/gtwalsheimpro-thin-webfont.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'GTWalsheim';
+    src: url('../static/gtwalsheim/gtwalsheimpro-regularoblique-webfont.woff2') format('woff2'),
+         url('../static/gtwalsheim/gtwalsheimpro-regularoblique-webfont.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+
+}
+
+@font-face {
+    font-family: 'GTWalsheim';
+    src: url('../static/gtwalsheim/gtwalsheimpro-thinoblique-webfont.woff2') format('woff2'),
+         url('../static/gtwalsheim/gtwalsheimpro-thinoblique-webfont.woff') format('woff');
+    font-weight: 100;
+    font-style: italic;
+
+}
+
+@font-face {
+    font-family: 'GTWalsheim';
+    src: url('../static/gtwalsheim/gtwalsheimpro-mediumoblique-webfont.woff2') format('woff2'),
+         url('../static/gtwalsheim/gtwalsheimpro-mediumoblique-webfont.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+
+}
+
+@font-face {
+    font-family: 'GTWalsheim';
+    src: url('../static/gtwalsheim/gtwalsheimpro-lightoblique-webfont.woff2') format('woff2'),
+         url('../static/gtwalsheim/gtwalsheimpro-lightoblique-webfont.woff') format('woff');
+    font-weight: 200;
+    font-style: italic;
+
+}
+
+@font-face {
+    font-family: 'GTWalsheim';
+    src: url('../static/gtwalsheim/gtwalsheimpro-boldoblique-webfont.woff2') format('woff2'),
+         url('../static/gtwalsheim/gtwalsheimpro-boldoblique-webfont.woff') format('woff');
+    font-weight: 600;
+    font-style: italic;
+
+}
+
+@font-face {
+    font-family: 'GTWalsheim';
+    src: url('../static/gtwalsheim/gtwalsheimpro-blackoblique-webfont.woff2') format('woff2'),
+         url('../static/gtwalsheim/gtwalsheimpro-blackoblique-webfont.woff') format('woff');
+    font-weight: 700;
+    font-style: italic;
+
 }

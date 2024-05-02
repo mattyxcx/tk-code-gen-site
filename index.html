@@ -1,59 +1,92 @@
 <html><head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-    <title>Style Master</title>
-    <link rel="icon" href="assets/static/favicon.png">
+    <meta name="title" content="TK Maxx SKU Lookup">
+    <meta name="image" content="https://img.tkmaxx.com/_ui/responsive/common/images/icons/svg/icon-heart-hover.svg">
+    <meta name="description" content="Easily find a matching price SKU for your TK & HS reticketing!">
+    <meta name="keywords" content="TK Maxx, Homesense, Reticketing, Style, Code, SKU, Price, Department">
+    <meta name="author" content="Style Lookup">
+    <meta name="robots" content="follow, index">
+    <title>Style Lookup</title>
+    <link rel="icon" href="https://img.tkmaxx.com/_ui/responsive/common/images/icons/svg/icon-heart-hover.svg">
     <link rel="preload" as="style" href="assets/styles/main.css">
     <link rel="stylesheet" href="assets/styles/main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Round">
     <link href="https://fonts.googleapis.com/css2?family=Roboto" rel="stylesheet">
-    <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-R2R3SB31V8'); </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0FNYWH83SW"></script>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5CF65Q8Q');</script>
+    <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-0FNYWH83SW');</script>
 </head>
 <body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5CF65Q8Q" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <main>
         <section class="header">
-            <h1>Style Master</h1>
+            <h1>Style Lookup</h1>
         </section>
         <section class="home">
             <div class="main max-width-700">
-                <div>
-                    <p style="text-align: center; font-style: italic; font-size: 12px; color: #ffffffa4;">Enter a department & price to retrieve a style code</p>
-                </div>
-                <div class="values">
+                <div class="values" style=" padding-left: 6px;">
                     <div class="row-headers" style="padding-top: 60px;width: 200px;">
                         <p style="padding-bottom: 16px;">Department</p>
                         <p style="padding-top: 7px;padding-bottom: 7px;">Price</p>
                     </div>
                     <div class="row-boxes" style="padding-top: 48px; max-width: 75px;">
-                        <input class="input-box" id="dept">
-                        <input class="input-box" id="price">
+                        <input class="input-box" id="dept" autofocus value="">
+                        <input class="input-box" id="price" value="">
                     </div>
                 </div>
-                <div style="padding-top: 60px">
+                <div style="padding-top: 30px;">
                     <div class="values">
-                        <button type="button" class="btn" id="submit">FIND STYLE CODE</button>
-                        <div style="width: 6px;"></div>
-                        <button type="button" class="btn" style="width:120px" id="clear">CLEAR</button>
+                        <button type="button" class="btn" id="submit">Find Style Code</button>
+                        <div style="width: 12px;"></div>
+                        <button type="button" class="btn" style="width:110px" id="clear">Clear</button>
+                    </div>
+                    <form style="padding: 4px;" action="./departments.html">
+                        <button type="submit" class="btn" style="width:220px">Open Department List</button>
+                    </form>
+                </div>
+                
+                <div style="padding-top: 30px">
+                    <p id="result" class="success"></p>
+                    <p id="amount" class="amount"> </p>
+                </div>
+
+                <div style="padding-top: 10px">
+                    <button type="button" class="btn invis" id="rand">Randomise</button>
+                </div>
+
+                <div style="padding-top: 30px;">
+                    <div id="results-box" class="results max-width-500 invis">
+                        <div class="values">
+                            <div class="result-image-container">
+                                <img id="result-image" class="result-image" src=" ">
+                            </div>
+                            <div class="result-info">
+                                <p id="result-brand" class="brand-name"></p>
+                                <a id="result-link" target=”_blank” class="item-name"><u></u></a>
+                                <p id="sku" class="sku"></p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div style="padding-top: 60px">
-                    <p id="result" style="font-size: 20px; padding-bottom: 14px;"></p>
-                    <p id="result-brand" class="brand-name"></p>
-                    <a id="result-link" target=”_blank” class="item-name"></a>
+
+                <div style="padding-top: 30px">
+                    <img id="barcode" class="barcode invis" src=" ">
                 </div>
-                <div style="padding-top: 10px">
-                    <button type="button" class="btn small-btn invis" id="rand">Randomise</button>
-                </div>
-                <div style="padding-top: 60px">
-                    <img id="barcode" class="barcode invis" src="">
-                </div>
+
             </div>
         </section>
 
         <section class="footer">
-            <p class="footer-center" style="margin: 28px; font-size:14px">Style Master does not encourage price guessing, and is not responsible for any unmatched sales. Use Style Master responsibly &amp; in line with BSP</p>
+            <p style="font-size:14px; font-weight:400">Not affiliated with TJX or its subsidiaries</p>
+            <p class="footer-center" style="margin: 14px; font-size:12px">Style Lookup does not encourage price guessing, and is not responsible for any unmatched sales. Use this tool responsibly &amp; in line with BSP</p>
+            <a target=”_blank” href="https://tkmaxx.com/uk/en"><u style="font-size: 14px; font-weight:300;">TK Maxx</u></a>
+            &#x2022;
+            <a target=”_blank” href="https://tkmaxxfinder.com"><u style="font-size: 14px; font-weight:300;">TK Maxx Finder</u></a>
+            &#x2022;
+            <a target=”_blank” href="https://tksearcher.com"><u style="font-size: 14px; font-weight:300;">TK Searcher</u></a>
         </section>
     </main>
 
